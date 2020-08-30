@@ -2,6 +2,7 @@
     --color-text-primary:                   #111111;
     --color-text-secondary:                 #777777;
     --color-text-terciary:                  #999999;
+    --color-text-quartenary:                #444444;
     --black:                                #000000;
     --white:                                #FFFFFF;
     --color-background-banner:              #FBDFDB;
@@ -45,8 +46,50 @@ img {
     list-style-type: none;
 }
 
+.section {
+    padding-bottom: 50px;
+}
+
+.section .h2,
+.section .h1 {
+    margin-bottom: 20px;
+}
+
+.section .p {
+    margin-bottom: 32px;
+    color: var(--color-text-quartenary);
+}
+
+.section__footer {
+    text-align: center;
+    padding: 32px 0;
+}
+
+.section__footer .section__link {
+    text-decoration: none;
+    background-color: var(--color-background-banner);
+    padding: 1rem 1.5rem;
+    color: var(--color-text-quartenary);
+    border-radius: 8px;
+    margin-top: 20px;
+    display: inline-block;
+    transition: ease .3s opacity;
+}
+
+.section__footer .section__link:hover {
+    opacity: 0.5;
+}
+
+.section-about .h1 {
+    font-size: 24px;
+}
+
+.section-about .h2 {
+    font-size: 20px;
+}
+
 /* Navigation */
-.navigation .wrapper {
+.header .wrapper {
     display: flex;
     align-items: center;
     padding-top: 36px;
@@ -71,7 +114,17 @@ img {
     text-decoration: none;
 }
 
+.navigation .menu:hover > li {
+    opacity: 0.5;
+}
+.navigation .menu > li:hover {
+    opacity: 1;
+}
+
 /* Hero */
+.section-hero {
+    padding-bottom: 50px;
+}
 .hero {
     background-color: var(--color-background-banner);
     border-radius: 30px;
@@ -92,6 +145,10 @@ img {
     margin-right: 100px;
 }
 
+.hero .h1 {
+    margin-bottom: 10px;
+}
+
 .hero p {
     opacity: 0.7;
     font-size: 18px;
@@ -99,13 +156,6 @@ img {
 }
 
 /* Recipes */
-.section-recipes {
-    padding: 50px 0;
-}
- 
-.section-recipes .h2 {
-    margin-bottom: 20px;
-}
 
 .list-recipes {
     margin: 0;
