@@ -4,6 +4,7 @@
     --color-text-terciary:                  #999999;
     --color-text-quartenary:                #444444;
     --black:                                #000000;
+    --black-overlay:                        rgba(0,0,0, .85);
     --white:                                #FFFFFF;
     --color-background-banner:              #FBDFDB;
     --color-background-footer:              #EEEEEE;
@@ -15,8 +16,11 @@
     box-sizing: border-box;
 }
 
-body {
+*, body, button, select, input {
     font-family: 'Roboto', sans-serif;
+}
+
+body {
     font-size: 16px;
     line-height: 1.5;
     color: var(--black);
@@ -24,6 +28,12 @@ body {
 
 h1, h2, h3, h4, h5, h6 { 
     color: var(--color-text-primary);
+}
+
+button {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
 }
 
 img {
@@ -168,6 +178,10 @@ img {
     width: 100%;
 }
 
+.list-recipes li {
+    cursor: pointer;
+}
+
 .list-recipes li .list-recipes__crop {
     overflow: hidden;
     border-radius: 15px;
@@ -199,4 +213,69 @@ img {
     font-size: 14px;
     text-align: center;
     color: var(--color-text-terciary);
+}
+
+/* Modal */
+.modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--black-overlay);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.modal .modal-box {
+    background-color: var(--white);
+    width: 100%;
+    max-width: 660px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.modal .modal-box__wrapper {
+    height: 200px;
+    width: 600px;
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: var(--color-text-terciary);
+}
+
+.modal .modal-box__image {
+    width: 100%;
+}
+
+.modal .modal-box__title {
+    font-size: 24px;
+    line-height: 28px;
+    margin-top: 20px;
+}
+
+.modal .modal-box__text {
+    color: var(--color-text-secondary);
+    font-size: 18px;
+    line-height: 21px;
+    margin-top: 5px;
+}
+
+.modal .modal-box__close {
+    background-color: transparent;
+    border: none;
+    color: var(--color-text-terciary);
+    margin-top: 60px;
+    cursor: pointer;
+}
+
+.modal.maximize {
+    visibility: visible;
+    opacity: 1;
 }
